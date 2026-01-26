@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Documentación de EdumanagerApp - Guías, tutoriales y referencia técnica.">
+    <title>Documentación - EdumanagerApp</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/docs.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="docs-header">
+        <div class="docs-header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">📚</span>
+                <span class="logo-text">EduDocs</span>
+            </a>
+
+            <nav class="docs-nav">
+                <a href="index.html" class="docs-nav-link">Inicio</a>
+                <a href="#" class="docs-nav-link active">Docs</a>
+                <a href="#" class="docs-nav-link">API</a>
+                <a href="#" class="docs-nav-link">Comunidad</a>
+            </nav>
+
+            <div class="docs-search">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="M21 21l-4.35-4.35" />
+                </svg>
+                <input type="text" placeholder="Buscar en la documentación..." id="docs-search-input">
+                <kbd>Ctrl+K</kbd>
+            </div>
+
+            <label class="theme-switch" title="Cambiar tema">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider">
+                    <span class="icon-sun">☀️</span>
+                    <span class="icon-moon">🌙</span>
+                </span>
+            </label>
+
+            <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 12h18M3 6h18M3 18h18" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div class="docs-layout">
+        <!-- Sidebar -->
+        <aside class="docs-sidebar" id="docs-sidebar">
+            <nav class="sidebar-nav">
+                <!-- Introduction -->
+                <div class="nav-section">
+                    <button class="nav-section-toggle active" data-section="intro">
+                        <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6" />
+                        </svg>
+                        Introducción
+                    </button>
+                    <ul class="nav-section-items show">
+                        <li><a href="#overview" class="nav-item active" data-topic="overview">Descripción General</a>
+                        </li>
+                        <li><a href="#getting-started" class="nav-item" data-topic="getting-started">Comenzar</a></li>
+                        <li><a href="#installation" class="nav-item" data-topic="installation">Instalación</a></li>
+                    </ul>
+                </div>
+
+                <!-- Configuration -->
+                <div class="nav-section">
+                    <button class="nav-section-toggle" data-section="config">
+                        <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6" />
+                        </svg>
+                        Configuración
+                    </button>
+                    <ul class="nav-section-items">
+                        <li><a href="#requirements" class="nav-item" data-topic="requirements">Requisitos del
+                                Sistema</a></li>
+                        <li><a href="#initial-setup" class="nav-item" data-topic="initial-setup">Configuración
+                                Inicial</a></li>
+                        <li><a href="#environment" class="nav-item" data-topic="environment">Variables de Entorno</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- User Management -->
+                <div class="nav-section">
+                    <button class="nav-section-toggle" data-section="users">
+                        <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6" />
+                        </svg>
+                        Gestión de Usuarios
+                    </button>
+                    <ul class="nav-section-items">
+                        <li><a href="#students" class="nav-item" data-topic="students">Estudiantes</a></li>
+                        <li><a href="#teachers" class="nav-item" data-topic="teachers">Docentes</a></li>
+                        <li><a href="#admins" class="nav-item" data-topic="admins">Administrativos</a></li>
+                    </ul>
+                </div>
+
+                <!-- Modules -->
+                <div class="nav-section">
+                    <button class="nav-section-toggle" data-section="modules">
+                        <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6" />
+                        </svg>
+                        Módulos
+                    </button>
+                    <ul class="nav-section-items">
+                        <li><a href="#grades" class="nav-item" data-topic="grades">Calificaciones</a></li>
+                        <li><a href="#attendance" class="nav-item" data-topic="attendance">Asistencia</a></li>
+                        <li><a href="#reports" class="nav-item" data-topic="reports">Reportes</a></li>
+                        <li><a href="#communication" class="nav-item" data-topic="communication">Comunicación</a></li>
+                    </ul>
+                </div>
+
+                <!-- API Reference -->
+                <div class="nav-section">
+                    <button class="nav-section-toggle" data-section="api">
+                        <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6" />
+                        </svg>
+                        API Reference
+                    </button>
+                    <ul class="nav-section-items">
+                        <li><a href="#authentication" class="nav-item" data-topic="authentication">Autenticación</a>
+                        </li>
+                        <li><a href="#endpoints" class="nav-item" data-topic="endpoints">Endpoints</a></li>
+                        <li><a href="#webhooks" class="nav-item" data-topic="webhooks">Webhooks</a></li>
+                    </ul>
+                </div>
+
+                <!-- FAQ -->
+                <div class="nav-section">
+                    <button class="nav-section-toggle" data-section="faq">
+                        <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6" />
+                        </svg>
+                        FAQ
+                    </button>
+                    <ul class="nav-section-items">
+                        <li><a href="#general-faq" class="nav-item" data-topic="general-faq">Preguntas Generales</a>
+                        </li>
+                        <li><a href="#troubleshooting" class="nav-item" data-topic="troubleshooting">Solución de
+                                Problemas</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="docs-content">
+            <article class="docs-article" id="docs-article">
+                <!-- Breadcrumb -->
+                <nav class="breadcrumb">
+                    <a href="index.html">Inicio</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <a href="#">Docs</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current" id="breadcrumb-current">Descripción General</span>
+                </nav>
+
+                <!-- Article Content -->
+                <div class="article-content" id="article-content">
+                    <!-- Overview Topic (Default) -->
+                    <div class="topic-content" id="topic-overview">
+                        <h1>Descripción General</h1>
+
+                        <p class="lead">
+                            Bienvenido a la documentación oficial de <strong>EdumanagerApp</strong>, el sistema integral
+                            de gestión educativa diseñado para simplificar la administración de instituciones
+                            educativas.
+                        </p>
+
+                        <div class="callout callout-info">
+                            <div class="callout-icon">💡</div>
+                            <div class="callout-content">
+                                <strong>Tip:</strong> Si es tu primera vez usando EdumanagerApp, te recomendamos
+                                comenzar
+                                con la sección <a href="#getting-started">Comenzar</a> para una guía paso a paso.
+                            </div>
+                        </div>
+
+                        <h2 id="what-is">¿Qué es EdumanagerApp?</h2>
+
+                        <p>
+                            EdumanagerApp es una plataforma web completa que permite a las instituciones educativas
+                            gestionar todos sus procesos académicos y administrativos desde un solo lugar.
+                            Diseñado con las mejores prácticas de usabilidad y seguridad.
+                        </p>
+
+                        <h3>Características Principales</h3>
+
+                        <ul class="feature-list">
+                            <li>
+                                <span class="feature-icon">👨‍🎓</span>
+                                <div>
+                                    <strong>Gestión de Estudiantes</strong>
+                                    <p>Control completo de matrículas, expedientes y historial académico.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="feature-icon">📊</span>
+                                <div>
+                                    <strong>Sistema de Calificaciones</strong>
+                                    <p>Registro de notas con cálculos automáticos y generación de boletines.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="feature-icon">✅</span>
+                                <div>
+                                    <strong>Control de Asistencia</strong>
+                                    <p>Registro digital con reportes automáticos y notificaciones.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="feature-icon">💬</span>
+                                <div>
+                                    <strong>Comunicación Integrada</strong>
+                                    <p>Mensajería directa entre docentes, padres y administrativos.</p>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <h2 id="architecture">Arquitectura del Sistema</h2>
+
+                        <p>
+                            EdumanagerApp está construido con tecnologías modernas y escalables:
+                        </p>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">Stack Tecnológico</span>
+                                <button class="copy-btn" data-code="stack">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" />
+                                        <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+                                    </svg>
+                                    Copiar
+                                </button>
+                            </div>
+                            <pre><code>├── Frontend
+│   ├── HTML5 / CSS3 / JavaScript
+│   ├── Responsive Design
+│   └── Progressive Web App (PWA)
+│
+├── Backend
+│   ├── PHP 8.x / Laravel 10
+│   ├── RESTful API
+│   └── MySQL / PostgreSQL
+│
+└── Infraestructura
+    ├── Docker
+    ├── Nginx / Apache
+    └── Redis (Cache)</code></pre>
+                        </div>
+
+                        <div class="callout callout-warning">
+                            <div class="callout-icon">⚠️</div>
+                            <div class="callout-content">
+                                <strong>Importante:</strong> Asegúrate de cumplir con los
+                                <a href="#requirements">requisitos mínimos del sistema</a> antes de proceder con la
+                                instalación.
+                            </div>
+                        </div>
+
+                        <h2 id="support">Soporte y Comunidad</h2>
+
+                        <p>
+                            Si necesitas ayuda, tienes varias opciones disponibles:
+                        </p>
+
+                        <div class="cards-grid">
+                            <div class="info-card">
+                                <div class="info-card-icon">📧</div>
+                                <h4>Soporte por Email</h4>
+                                <p>Respuesta en menos de 24 horas</p>
+                                <a href="mailto:soporte@edumanagerapp.com">soporte@edumanagerapp.com</a>
+                            </div>
+                            <div class="info-card">
+                                <div class="info-card-icon">💬</div>
+                                <h4>Discord</h4>
+                                <p>Comunidad activa de usuarios</p>
+                                <a href="#">Únete al servidor</a>
+                            </div>
+                            <div class="info-card">
+                                <div class="info-card-icon">🐙</div>
+                                <h4>GitHub</h4>
+                                <p>Reporta bugs y solicita features</p>
+                                <a href="#">Ver repositorio</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Getting Started Topic -->
+                    <div class="topic-content hidden" id="topic-getting-started">
+                        <h1>Comenzar con EdumanagerApp</h1>
+
+                        <p class="lead">
+                            Esta guía te ayudará a poner en marcha EdumanagerApp en tu institución en menos de 30
+                            minutos.
+                        </p>
+
+                        <h2 id="prerequisites">Prerrequisitos</h2>
+
+                        <p>Antes de comenzar, asegúrate de tener:</p>
+
+                        <ul>
+                            <li>Servidor con PHP 8.1 o superior</li>
+                            <li>Base de datos MySQL 8.0+ o PostgreSQL 13+</li>
+                            <li>Composer 2.x instalado</li>
+                            <li>Node.js 18+ y npm</li>
+                        </ul>
+
+                        <h2 id="quick-start">Inicio Rápido</h2>
+
+                        <h3>Paso 1: Clonar el repositorio</h3>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">bash</span>
+                                <button class="copy-btn">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" />
+                                        <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+                                    </svg>
+                                    Copiar
+                                </button>
+                            </div>
+                            <pre><code>git clone https://github.com/edumanager/app.git
+cd app</code></pre>
+                        </div>
+
+                        <h3>Paso 2: Instalar dependencias</h3>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">bash</span>
+                                <button class="copy-btn">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" />
+                                        <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+                                    </svg>
+                                    Copiar
+                                </button>
+                            </div>
+                            <pre><code>composer install
+npm install</code></pre>
+                        </div>
+
+                        <h3>Paso 3: Configurar el entorno</h3>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">bash</span>
+                                <button class="copy-btn">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" />
+                                        <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+                                    </svg>
+                                    Copiar
+                                </button>
+                            </div>
+                            <pre><code>cp .env.example .env
+php artisan key:generate</code></pre>
+                        </div>
+
+                        <div class="callout callout-success">
+                            <div class="callout-icon">✅</div>
+                            <div class="callout-content">
+                                <strong>¡Listo!</strong> Ahora puedes acceder a la aplicación en
+                                <code>http://localhost:8000</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Installation Topic -->
+                    <div class="topic-content hidden" id="topic-installation">
+                        <h1>Guía de Instalación</h1>
+
+                        <p class="lead">
+                            Instrucciones detalladas para instalar EdumanagerApp en diferentes entornos.
+                        </p>
+
+                        <h2>Instalación con Docker</h2>
+
+                        <p>La forma más sencilla de ejecutar EdumanagerApp es usando Docker:</p>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">bash</span>
+                                <button class="copy-btn">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" />
+                                        <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+                                    </svg>
+                                    Copiar
+                                </button>
+                            </div>
+                            <pre><code># Construir y ejecutar contenedores
+docker-compose up -d
+
+# Ejecutar migraciones
+docker-compose exec app php artisan migrate
+
+# Crear usuario administrador
+docker-compose exec app php artisan db:seed</code></pre>
+                        </div>
+
+                        <h2>Instalación Manual</h2>
+
+                        <p>Para una instalación manual, sigue estos pasos detallados...</p>
+
+                        <div class="callout callout-info">
+                            <div class="callout-icon">📖</div>
+                            <div class="callout-content">
+                                Consulta la sección de <a href="#requirements">Requisitos del Sistema</a> para más
+                                detalles sobre las versiones compatibles.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Requirements Topic -->
+                    <div class="topic-content hidden" id="topic-requirements">
+                        <h1>Requisitos del Sistema</h1>
+
+                        <p class="lead">
+                            Verifica que tu servidor cumpla con estos requisitos mínimos antes de instalar.
+                        </p>
+
+                        <h2>Requisitos de Servidor</h2>
+
+                        <table class="docs-table">
+                            <thead>
+                                <tr>
+                                    <th>Componente</th>
+                                    <th>Mínimo</th>
+                                    <th>Recomendado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>PHP</td>
+                                    <td>8.1</td>
+                                    <td>8.2+</td>
+                                </tr>
+                                <tr>
+                                    <td>MySQL</td>
+                                    <td>8.0</td>
+                                    <td>8.0+</td>
+                                </tr>
+                                <tr>
+                                    <td>RAM</td>
+                                    <td>2 GB</td>
+                                    <td>4 GB+</td>
+                                </tr>
+                                <tr>
+                                    <td>Disco</td>
+                                    <td>10 GB</td>
+                                    <td>50 GB+</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Extensiones PHP Requeridas</h2>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">Extensiones</span>
+                            </div>
+                            <pre><code>- BCMath
+- Ctype
+- cURL
+- DOM
+- Fileinfo
+- JSON
+- Mbstring
+- OpenSSL
+- PDO
+- Tokenizer
+- XML</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- More topics can be added here following the same pattern -->
+
+                </div>
+
+                <!-- Navigation -->
+                <nav class="article-nav">
+                    <a href="#" class="nav-prev" id="nav-prev">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7" />
+                        </svg>
+                        <div>
+                            <span class="nav-label">Anterior</span>
+                            <span class="nav-title" id="prev-title">-</span>
+                        </div>
+                    </a>
+                    <a href="#" class="nav-next" id="nav-next">
+                        <div>
+                            <span class="nav-label">Siguiente</span>
+                            <span class="nav-title" id="next-title">Comenzar</span>
+                        </div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </nav>
+            </article>
+
+            <!-- Table of Contents -->
+            <aside class="docs-toc">
+                <div class="toc-container">
+                    <h4>En esta página</h4>
+                    <nav class="toc-nav" id="toc-nav">
+                        <a href="#what-is" class="toc-link">¿Qué es EdumanagerApp?</a>
+                        <a href="#architecture" class="toc-link">Arquitectura del Sistema</a>
+                        <a href="#support" class="toc-link">Soporte y Comunidad</a>
+                    </nav>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <!-- Custom Scripts -->
+    <script src="js/docs.js"></script>
+</body>
+
+</html>
