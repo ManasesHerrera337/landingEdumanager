@@ -5,7 +5,7 @@
 // ============================================
 // 🎨 CURSOR GLOW EFFECT - Cambia a false para desactivar
 // ============================================
-const ENABLE_CURSOR_GLOW = true;
+const ENABLE_CURSOR_GLOW = false;
 
 // Cursor Glow Effect
 function initCursorGlow() {
@@ -18,12 +18,16 @@ function initCursorGlow() {
 
     // Add styles
     const style = document.createElement('style');
+    /* Antes (Esfera sólida) */
+    // background: radial-gradient(circle, rgba(0, 119, 182, 0.15) 0%, rgba(3, 4, 95, 0.08) 40%, transparent 70%);
+    /* Nueva (Esfera con gradiente) */
+    // background: radial-gradient(circle, transparent 25%, rgba(0, 119, 182, 0.2) 45%, rgba(3, 4, 95, 0.1) 60%, transparent 50%);
     style.textContent = `
         .cursor-glow {
             position: fixed;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(0, 119, 182, 0.15) 0%, rgba(3, 4, 95, 0.08) 40%, transparent 70%);
+            width: 900px;
+            height: 900px;
+            background: radial-gradient(circle, transparent 20%, rgba(0, 119, 182, 0.2) 40%, rgba(3, 4, 95, 0.05) 60%, transparent 80%);
             border-radius: 50%;
             pointer-events: none;
             z-index: 9999;
