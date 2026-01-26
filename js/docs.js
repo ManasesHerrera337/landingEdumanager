@@ -12,6 +12,7 @@ function initThemeToggle() {
     // Check for saved theme preference or default to light
     const savedTheme = localStorage.getItem('docs-theme') || 'light';
     html.setAttribute('data-theme', savedTheme);
+    updateLogo(savedTheme);
 
     // Sync checkbox state with saved theme
     if (toggle) {
@@ -21,7 +22,19 @@ function initThemeToggle() {
             const newTheme = toggle.checked ? 'dark' : 'light';
             html.setAttribute('data-theme', newTheme);
             localStorage.setItem('docs-theme', newTheme);
+            updateLogo(newTheme);
         });
+    }
+}
+
+function updateLogo(theme) {
+    const logoImg = document.querySelector('.logo .logo-icon img');
+    if (logoImg) {
+        if (theme === 'dark') {
+            logoImg.src = 'img/isotipoblanco.png';
+        } else {
+            logoImg.src = 'img/isotipoazul.png';
+        }
     }
 }
 
@@ -51,7 +64,8 @@ document.addEventListener('DOMContentLoaded', function () {
         { id: 'installation', title: 'Instalación', section: 'intro' },
         { id: 'requirements', title: 'Requisitos del Sistema', section: 'config' },
         { id: 'initial-setup', title: 'Configuración Inicial', section: 'config' },
-        { id: 'environment', title: 'Variables de Entorno', section: 'config' },
+        // { id: 'environment', title: 'Variables de Entorno', section: 'config' },
+        { id: 'uploadNomina', title: 'Carga de Datos', section: 'config' },
         { id: 'students', title: 'Estudiantes', section: 'users' },
         { id: 'teachers', title: 'Docentes', section: 'users' },
         { id: 'admins', title: 'Administrativos', section: 'users' },

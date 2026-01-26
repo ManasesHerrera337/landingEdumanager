@@ -23,8 +23,8 @@
     <header class="docs-header">
         <div class="docs-header-container">
             <a href="index.html" class="logo">
-                <span class="logo-icon">📚</span>
-                <span class="logo-text">EduDocs</span>
+                <span class="logo-icon"><img src="img/isotipoazul.png" width="30px" height="40px" alt=""></span>
+                <span class="logo-text" style="font-size: 20px; margin-left: -6px;">duDocs</span>
             </a>
 
             <nav class="docs-nav">
@@ -92,7 +92,7 @@
                                 Sistema</a></li>
                         <li><a href="#initial-setup" class="nav-item" data-topic="initial-setup">Configuración
                                 Inicial</a></li>
-                        <li><a href="#environment" class="nav-item" data-topic="environment">Variables de Entorno</a>
+                        <li><a href="#uploadNomina" class="nav-item" data-topic="uploadNomina">Carga de Datos</a>
                         </li>
                     </ul>
                 </div>
@@ -412,13 +412,13 @@ php artisan key:generate</code></pre>
                                 </button>
                             </div>
                             <pre><code># Construir y ejecutar contenedores
-docker-compose up -d
+                                docker-compose up -d
 
-# Ejecutar migraciones
-docker-compose exec app php artisan migrate
+                                # Ejecutar migraciones
+                                docker-compose exec app php artisan migrate
 
-# Crear usuario administrador
-docker-compose exec app php artisan db:seed</code></pre>
+                                # Crear usuario administrador
+                                docker-compose exec app php artisan db:seed</code></pre>
                         </div>
 
                         <h2>Instalación Manual</h2>
@@ -493,6 +493,66 @@ docker-compose exec app php artisan db:seed</code></pre>
 - PDO
 - Tokenizer
 - XML</code></pre>
+                        </div>
+                    </div>
+
+
+                    <!-- Requirements Topic -->
+                    <div class="topic-content hidden" id="topic-uploadNomina">
+                        <h1>Carga de Datos</h1>
+
+                        <p class="lead">
+                            Verifica que tu servidor cumpla con estos requisitos mínimos antes de instalar.
+                        </p>
+
+                        <h2>Requisitos de Servidor</h2>
+
+                        <table class="docs-table">
+                            <thead>
+                                <tr>
+                                    <th>Componente</th>
+                                    <th>Mínimo</th>
+                                    <th>Recomendado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>PHP</td>
+                                    <td>8.1</td>
+                                    <td>8.2+</td>
+                                </tr>
+                                <tr>
+                                    <td>MySQL</td>
+                                    <td>8.0</td>
+                                    <td>8.0+</td>
+                                </tr>
+                                <tr>
+                                    <td>RAM</td>
+                                    <td>2 GB</td>
+                                    <td>4 GB+</td>
+                                </tr>
+                                <tr>
+                                    <td>Disco</td>
+                                    <td>10 GB</td>
+                                    <td>50 GB+</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Video</h2>
+
+
+                        <div class="code-block video-block">
+                            <div class="code-header">
+                                <span class="code-lang">Carga de Datos</span>
+                            </div>
+
+
+
+                            <iframe width="720" height="405" src="https://www.youtube.com/embed/SvOx7tA_Cv8"
+                                title="How To Make a McDonald&#39;s Cheeseburger" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                     </div>
 

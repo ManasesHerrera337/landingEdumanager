@@ -604,6 +604,18 @@ code {
     padding: 0;
 }
 
+.code-block.video-block {
+    background: transparent;
+    box-shadow: var(--shadow-md);
+}
+
+.code-block.video-block iframe {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+}
+
 /* Tables */
 .docs-table {
     width: 100%;

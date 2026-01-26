@@ -1335,3 +1335,39 @@ h6 {
         transform: translateX(-50%) translateY(-5px);
     }
 }
+
+/* ========================================
+   PRICING SECTION
+   ======================================== */
+.plan-price {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin: var(--space-sm) 0;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 4px;
+}
+
+.plan-period {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--gray-600);
+    font-weight: 500;
+}
+
+
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-sm) 0;
+    text-align: left;
+}
+
+.plan-features li {
+    color: var(--gray-600);
+    font-size: 0.875rem;
+    margin-bottom: var(--space-xs);
+}
