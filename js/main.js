@@ -132,49 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Contact form handling
-    const contactForm = document.getElementById('contact-form');
-
-    if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-
-            // Simulate form submission
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-
-            submitBtn.innerHTML = `
-                <svg class="btn-icon spinning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="10" stroke-dasharray="60" stroke-dashoffset="20"/>
-                </svg>
-                Enviando...
-            `;
-            submitBtn.disabled = true;
-
-            // Simulate API call
-            setTimeout(() => {
-                submitBtn.innerHTML = `
-                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M20 6L9 17l-5-5"/>
-                    </svg>
-                    ¡Mensaje Enviado!
-                `;
-                submitBtn.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
-
-                // Reset form
-                setTimeout(() => {
-                    contactForm.reset();
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                    submitBtn.style.background = '';
-                }, 3000);
-            }, 1500);
-        });
-    }
+    // Contact form handling moved to js/sendContactForm.js
 
     // Parallax effect for hero shapes
     const shapes = document.querySelectorAll('.shape, .blob');
